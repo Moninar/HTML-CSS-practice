@@ -4,6 +4,10 @@
 	<title>Chrome Practice</title>
 </head>
 <body>
-	<input type="text" name="someInput" placeholder="Douglas Quaid" required>
+	<input id="the-input" type="text" value="Name:">
+	<script type="text/javascript">
+		const theInput = document.querySelector('input');
+		console.log(theInput.value, theInput.getAttribute('value'), theInput.defaultValue)       
+	</script>
 </body>
 </html>
