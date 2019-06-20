@@ -7,7 +7,40 @@
 	<input id="the-input" type="text" value="Name:">
 	<script type="text/javascript">
 		const theInput = document.querySelector('input');
-		console.log(theInput.value, theInput.getAttribute('value'), theInput.defaultValue)       
+		console.log(theInput.value, theInput.getAttribute('value'), theInput.defaultValue);
+		var obj = {
+			name: "Zheng",
+			age: 22,
+			info: function() {
+				console.log(this.name, this.age);
+			}
+		}
+
+		// console.log(obj);
+
+		function Pet(name, species){
+			this.name = name;
+			this.species = species;
+		}
+		function view(){
+			return this.name + " is a " + this.species + "!";
+		}
+		Pet.prototype.view = view;
+		Pet.prototype.show = true;
+		var pet = new Pet("Ni", "bat");
+
+		console.log("prototype", Pet.prototype);
+		console.log("pet", pet.__proto__);
+		console.log(Pet.prototype === pet.__proto__);
+
+		function Dog(name){
+			Pet.call(this, name, "dog");
+		}
+		Dog.prototype = new Pet();
+		Dog.prototype.bark = function(){
+			alert("Woof!");
+		}
+		console.log(Dog.prototype);	
 	</script>
 </body>
 </html>
