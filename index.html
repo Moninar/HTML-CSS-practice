@@ -8,6 +8,7 @@
 	<script type="text/javascript">
 		const theInput = document.querySelector('input');
 		console.log(theInput.value, theInput.getAttribute('value'), theInput.defaultValue);
+
 		var obj = {
 			name: "Zheng",
 			age: 22,
@@ -18,29 +19,47 @@
 
 		// console.log(obj);
 
-		function Pet(name, species){
-			this.name = name;
-			this.species = species;
-		}
-		function view(){
-			return this.name + " is a " + this.species + "!";
-		}
-		Pet.prototype.view = view;
-		Pet.prototype.show = true;
-		var pet = new Pet("Ni", "bat");
+		// function Pet(name, species){
+		// 	this.name = name;
+		// 	this.species = species;
+		// }
+		// function view(){
+		// 	return this.name + " is a " + this.species + "!";
+		// }
+		// Pet.prototype.view = view;
+		// Pet.prototype.show = true;
+		// var pet = new Pet("Ni", "bat");
 
-		console.log("prototype", Pet.prototype);
-		console.log("pet", pet.__proto__);
-		console.log(Pet.prototype === pet.__proto__);
+		// console.log("prototype", Pet.prototype);
+		// console.log("pet", pet.__proto__);
+		// console.log(Pet.prototype === pet.__proto__);
 
-		function Dog(name){
-			Pet.call(this, name, "dog");
-		}
-		Dog.prototype = new Pet();
-		Dog.prototype.bark = function(){
-			alert("Woof!");
-		}
-		console.log(Dog.prototype);	
+		// function Dog(name){
+		// 	Pet.call(this, name, "dog");
+		// }
+		// Dog.prototype = new Pet();
+		// Dog.prototype.bark = function(){
+		// 	alert("Woof!");
+		// }
+		// console.log(Dog.prototype);	
+
+		var arr = [1, 2, 3];
+		
+		// object interation
+		// for (let prop in obj) { console.log(prop); }
+		// Object.keys(obj).forEach(prop => {console.log(prop);});
+		// Object.getOwnPropertyNames(obj).forEach(prop => {console.log(prop);});
+
+		//immutability
+		// const human = Object.freeze({race: 'human'});
+		// const john = { ...human, name: 'John' }; // {race: "human", name: "John"}
+		// john.race = 'ape';
+		// console.log(john);
+		// human.race = 'pet';
+		// console.log(human);
+
+		console.log(obj);
+		console.log(JSON.stringify(obj));
 	</script>
 </body>
 </html>
